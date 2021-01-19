@@ -1,0 +1,52 @@
+.root {
+    padding-top: 64px;
+    padding-bottom: 64px;
+	background-color: #121212;
+
+	article {
+		color: #ffffff;
+		grid-column: span 8;
+
+		h2 {
+			color: #ffffff;
+		}
+
+		p {
+			color: #afafaf;
+			font-size: 14px;
+			line-height: 17px;
+			margin-top: 24px;
+			margin-bottom: 48px;
+			padding-right: 3rem;
+		}
+	}
+
+	.img {
+		grid-column: span 4;
+		justify-self: flex-end;
+	}
+
+	@media (max-width: 767.8px) {
+		article {
+			grid-column: span 12;
+
+			h2 {
+				text-align: center;
+			}
+
+			p {
+				padding-right: 0;
+				text-align: justify;
+			}
+
+			.btn {
+				width: fit-content;
+				margin: 0 auto;
+			}
+		}
+
+		.img {
+			display: none;
+		}
+	}
+}

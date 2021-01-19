@@ -1,0 +1,84 @@
+@import '@/styles/variables.scss';
+
+.nav {
+	background-color: $nav-background-color;
+	padding-top: 27px;
+	padding-bottom: 27px;
+	overflow: hidden;
+
+	&__brand {
+		grid-column: span 2;
+	}
+
+	&__menu {
+		grid-column: span 4;
+		line-height: 18px;
+		align-items: center;
+
+		a {
+			font-size: 16px;
+			text-decoration: none;
+
+			&:not(:first-child) {
+				margin-left: 38px;
+			}
+		}
+	}
+
+	&__information {
+		grid-column: span 6;
+		align-items: center;
+		justify-content: flex-end;
+
+		.telephone {
+			align-self: center;
+			margin-right: 48px;
+
+			img {
+				margin-right: 11px;
+			}
+
+			span {
+				color: #595959;
+			}
+		}
+	}
+
+	@media (max-width: 991px) {
+		&__brand {
+			grid-column: span 3;
+		}
+
+		&__menu {
+			grid-column: span 7;
+
+			a {
+				&:not(:first-child) {
+					margin-left: 38px;
+				}
+			}
+		}
+
+		&__information {
+			grid-column: span 2;
+
+			.telephone {
+				display: none;
+			}
+		}
+	}
+
+	@media (max-width: 767.8px) {
+		&__brand {
+			grid-column: span 6;
+		}
+
+		& &__menu {
+			display: none;
+		}
+
+		& &__information {
+			display: none;
+		}
+	}
+}
