@@ -16,7 +16,7 @@ const checkActive = (route: string, path: string): boolean => {
 	return route.includes(path);
 };
 
-const NavBar: FC<SingletonRouter> = ({router: {route}}) => {
+const NavBar: FC<any> = ({router: {route}}) => {
 	const [activeMobileNav, setActiveMobileNav] = useState<boolean>(false);
 
 	const onMobileNavClick = () => {
