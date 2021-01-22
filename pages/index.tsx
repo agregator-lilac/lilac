@@ -4,6 +4,8 @@ import {ReviewSection} from '@/components/sections/ReviewSection';
 import {ServiceSection} from '@/components/sections/ServiceSection';
 import {NextPage} from 'next';
 import {IReview} from '@/types/reviews.types';
+import { FaqSection } from '@/components/sections/FaqSection';
+import { AboutSection } from '@/components/sections/AboutSection';
 
 interface IInitialData {
 	reviews: IReview[];
@@ -16,6 +18,8 @@ const Home: NextPage<IInitialData> = ({reviews}) => {
 			<CountersSection />
 			<ServiceSection />
 			<ReviewSection data={reviews} />
+            <AboutSection />
+            <FaqSection />
 		</>
 	);
 };
