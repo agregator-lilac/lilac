@@ -5,13 +5,16 @@ import App from 'next/app';
 import {Navbar} from '@/components/Navbar';
 
 import '@/styles/global.scss';
+import { Footer } from '@/components/Footer';
 
 
 const MyApp = ({Component, pageProps}: AppProps) => {
+
 	return (
 		<>
-            <Navbar />
+            <Navbar/>
 			<Component {...pageProps} />
+			<Footer />
 		</>
 	);
 };
