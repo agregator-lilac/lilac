@@ -1,5 +1,6 @@
-import {FC} from 'react';
+import {FC, useState} from 'react';
 import Link from 'next/link';
+import {withRouter, SingletonRouter} from 'next/router';
 
 import {Avatar} from '@/components/Avatar';
 
@@ -11,7 +12,17 @@ const navLinks = [
 	{title: 'FAQ', path: '/FAQ'},
 ];
 
-const Navbar: FC = () => {
+const checkActive = (route: string, path: string): boolean => {
+	return route.includes(path);
+};
+
+const NavBar: FC<SingletonRouter> = ({router: {route}}) => {
+	const [activeMobileNav, setActiveMobileNav] = useState<boolean>(false);
+
+	const onMobileNavClick = () => {
+		setActiveMobileNav((prev) => !prev);
+	};
+
 	return (
 		<nav className={`container d-grid ${styles.nav}`}>
 			<div className={styles.nav__brand}>
@@ -24,7 +35,9 @@ const Navbar: FC = () => {
 			<div className={`d-flex ${styles.nav__menu}`}>
 				{navLinks.map(({title, path}) => (
 					<Link href={path} key={path}>
-						<a>{title}</a>
+						<a className={`${checkActive(route, path) ? styles.active : ''}`}>
+							{title}
+						</a>
 					</Link>
 				))}
 			</div>
@@ -35,8 +48,29 @@ const Navbar: FC = () => {
 				</div>
 				<Avatar />
 			</div>
+
+			<div className={styles.nav__mobile}>
+				<img onClick={onMobileNavClick} src="assets/image/icon_menu.svg" alt="меню" />
+				<div
+					className={`${styles['nav__mobile-active']} ${
+						activeMobileNav
+							? styles['nav__mobile-show']
+							: styles['nav__mobile-disabled']
+					}`}
+				>
+					{navLinks.map(({title, path}) => (
+						<Link href={path} key={path}>
+							<a className={`${checkActive(route, path) ? styles.active : ''}`}>
+								{title}
+							</a>
+						</Link>
+					))}
+				</div>
+			</div>
 		</nav>
 	);
 };
+
+const Navbar = withRouter(NavBar);
 
 export {Navbar};
