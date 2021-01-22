@@ -1,6 +1,6 @@
 import {FC, useState} from 'react';
 import Link from 'next/link';
-import {withRouter} from 'next/router';
+import {withRouter, SingletonRouter} from 'next/router';
 
 import {Avatar} from '@/components/Avatar';
 
@@ -16,7 +16,7 @@ const checkActive = (route: string, path: string): boolean => {
 	return route.includes(path);
 };
 
-const NavBar: FC<any> = ({router: {route}}) => {
+const NavBar: FC<SingletonRouter> = ({router: {route}}) => {
 	const [activeMobileNav, setActiveMobileNav] = useState<boolean>(false);
 
 	const onMobileNavClick = () => {
