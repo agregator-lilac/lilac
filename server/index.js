@@ -16,6 +16,7 @@ app.prepare().then(() => {
 	});
 
 	server.listen(process.env.PORT || 3000, (err) => {
+		console.log(process.env.PORT || 3000);
 		if (err) throw err;
 		console.log(`> Ready on http://localhost:${port}`);
 	});
