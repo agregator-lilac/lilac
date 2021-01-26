@@ -106,14 +106,14 @@ const Slider: FC<IReviews> = ({reviews}) => {
 	}
 
 	const handleTouchEnd = (e: TouchEvent<HTMLDivElement>) => {
-		if (touchEnd - touchStart >= 150 && currentPage !== pages - 1) {
-			setCurrentPage(currentPage + 1);
+		if (touchEnd - touchStart >= 150 && currentPage !== 0) {
+			setCurrentPage(currentPage - 1);
 			return
 		}
 
-		if (touchEnd - touchStart <= -150 && currentPage !== 0) {
-			setCurrentPage(currentPage - 1);
-			return
+		if (touchEnd - touchStart <= -150 && currentPage !== pages - 1) {
+			setCurrentPage(currentPage + 1);
+			return;
 		}
 	}
 
