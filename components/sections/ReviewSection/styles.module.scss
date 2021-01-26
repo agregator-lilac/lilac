@@ -207,10 +207,16 @@
         }
         
         .controls {
-            justify-content: space-between;
+			justify-content: space-between;
+			
+			button {
+				display: none;
+			}
 
             .indicators {
-                display: none;
+				margin-left: 0;
+				margin-right: 0;
+				width: 100%;
             }
         }
 	}
