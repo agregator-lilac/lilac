@@ -1,4 +1,4 @@
-import {FC, useState} from 'react';
+import {FC, TouchEvent, useState} from 'react';
 import {ReviewCard} from './ReviewCard';
 import useWindowWidth from '@/utils/useWindowSize';
 import styles from './styles.module.scss';
@@ -93,11 +93,34 @@ interface IReviews {
 
 const Slider: FC<IReviews> = ({reviews}) => {
 	const width = useWindowWidth();
+	const [currentPage, setCurrentPage] = useState(0);
+	const [touchStart, setTouchStart] = useState<number>(0);
+	const [touchEnd, setTouchEnd] = useState<number>(0);
+
+	const handleTouchStart = (e: TouchEvent<HTMLDivElement>) => {
+		setTouchStart(e.targetTouches[0].clientX);
+	}
+
+	const handleTouchMove = (e: TouchEvent<HTMLDivElement>) => {
+		setTouchEnd(e.targetTouches[0].clientX);
+	}
+
+	const handleTouchEnd = (e: TouchEvent<HTMLDivElement>) => {
+		if (touchEnd - touchStart >= 150 && currentPage !== pages - 1) {
+			setCurrentPage(currentPage + 1);
+			return
+		}
+
+		if (touchEnd - touchStart <= -150 && currentPage !== 0) {
+			setCurrentPage(currentPage - 1);
+			return
+		}
+	}
+
 
 	let elemOnPage = getElemOnPage(width);
 
-	const pages = Math.ceil(reviews.length / elemOnPage);
-	const [currentPage, setCurrentPage] = useState(0);
+	const pages = Math.ceil(reviews.length / elemOnPage);	
 
 	const indicators = [];
 
@@ -116,11 +139,13 @@ const Slider: FC<IReviews> = ({reviews}) => {
 		currentPage * elemOnPage + elemOnPage < reviews.length
 			? reviews.slice(currentPage * elemOnPage, currentPage * elemOnPage + elemOnPage)
 			: reviews.slice(currentPage * elemOnPage);
-	console.log(activeSliderData);
 
 	return (
 		<div className={styles.slider}>
 			<div
+				onTouchStart={handleTouchStart}
+				onTouchMove={handleTouchMove}
+				onTouchEnd={handleTouchEnd}
 				className={`d-grid ${styles['slider-content']} ${
 					activeSliderData.length < elemOnPage ? styles.lastPage : ''
 				}`}
