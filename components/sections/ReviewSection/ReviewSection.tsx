@@ -13,18 +13,6 @@ interface IProps {
 const ReviewSection: FC<IProps> = ({data}) => {
 	const [reviews, setReviews] = useState<IReview[]>(data);
 
-	// const getReviews = async () => {
-	// 	return await fetch('https://lilac.gb-game.ru/reviews')
-	// 		.then((data) => {
-	// 			return data.json();
-	// 		})
-	// 		.then((data) => setReviews(data));
-	// };
-
-	// useEffect(() => {
-	// 	getReviews();
-	// }, []);
-
 	return (
 		<section className={`container ${styles.root}`}>
 			<div className={styles.header}>
