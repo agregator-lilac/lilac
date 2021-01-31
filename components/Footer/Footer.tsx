@@ -1,4 +1,5 @@
 import {FC} from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 
 import styles from './styles.module.scss';
@@ -16,7 +17,7 @@ const Footer: FC = () => {
 			<div className={styles.logo}>
 				<Link href={'/'}>
 					<a>
-						<img src={'/assets/image/logo.svg'} alt="Логотип" />
+						<Image src="/assets/image/logo.svg" alt="Логотип" width={121} height={46} />
 					</a>
 				</Link>
 			</div>

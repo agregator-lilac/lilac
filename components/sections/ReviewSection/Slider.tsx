@@ -1,4 +1,5 @@
 import {FC, TouchEvent, useState} from 'react';
+import Image from 'next/image';
 import {ReviewCard} from './ReviewCard';
 import useWindowWidth from '@/utils/useWindowSize';
 import styles from './styles.module.scss';
@@ -162,7 +163,12 @@ const Slider: FC<IReviews> = ({reviews}) => {
 						setCurrentPage(currentPage - 1);
 					}}
 				>
-					<img src="\assets\image\sections\reviews\left_arrow.svg" alt="left arrow" />
+					<Image
+						src="/assets/image/sections/reviews/left_arrow.svg"
+						alt="left arrow"
+						width={62}
+						height={14}
+					/>
 				</button>
 				<div className={styles.indicators}>{indicators.map((indicator) => indicator)}</div>
 				<button
@@ -172,7 +178,12 @@ const Slider: FC<IReviews> = ({reviews}) => {
 						setCurrentPage(currentPage + 1);
 					}}
 				>
-					<img src="\assets\image\sections\reviews\right_arrow.svg" alt="left arrow" />
+					<Image
+						src="/assets/image/sections/reviews/right_arrow.svg"
+						alt="left arrow"
+						width={62}
+						height={14}
+					/>
 				</button>
 			</div>
 		</div>

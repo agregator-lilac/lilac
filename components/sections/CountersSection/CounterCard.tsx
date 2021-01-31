@@ -1,4 +1,5 @@
 import {FC} from 'react';
+import Image from 'next/image';
 
 import styles from './styles.module.scss';
 
@@ -15,7 +16,7 @@ const CounterCard: FC<IProps> = ({count, icon, text}) => {
 		<article className={styles.counterCard}>
 			<span className={styles.count}>{count}</span>
 			<div className={styles.iconCount}>
-				<img src={icon} alt="" />
+				<Image src={icon} alt={text} width={32} height={32} />
 				<span className={styles.iconText}>{text}</span>
 			</div>
 		</article>
