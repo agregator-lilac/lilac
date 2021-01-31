@@ -1,6 +1,7 @@
 import {FC, useState} from 'react';
 import Link from 'next/link';
-import {withRouter, SingletonRouter} from 'next/router';
+import Image from 'next/image';
+import {withRouter} from 'next/router';
 
 import {Avatar} from '@/components/Avatar';
 
@@ -28,7 +29,7 @@ const NavBar: FC<any> = ({router: {route}}) => {
 			<div className={styles.nav__brand}>
 				<Link href={'/'}>
 					<a>
-						<img src="/assets/image/logo.svg" alt="Логотип" />
+						<Image src="/assets/image/logo.svg" alt="Логотип" width={121} height={46} />
 					</a>
 				</Link>
 			</div>
@@ -43,14 +44,19 @@ const NavBar: FC<any> = ({router: {route}}) => {
 			</div>
 			<div className={`d-flex ${styles.nav__information}`}>
 				<div className={`d-flex ${styles.telephone}`}>
-					<img src="/assets/image/call.svg" alt="telphone" />
+					<Image
+						src="/assets/image/call.svg"
+						alt="telphone"
+						width={12}
+						height={19}
+					/>
 					<span>+7 969 656 78 59</span>
 				</div>
 				<Avatar />
 			</div>
 
 			<div className={styles.nav__mobile}>
-				<img onClick={onMobileNavClick} src="assets/image/icon_menu.svg" alt="меню" />
+				<Image onClick={onMobileNavClick} src="/assets/image/icon_menu.svg" alt="меню" width={50} height={50} />
 				<div
 					className={`${styles['nav__mobile-active']} ${
 						activeMobileNav

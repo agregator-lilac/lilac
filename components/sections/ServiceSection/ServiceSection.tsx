@@ -1,4 +1,5 @@
 import {FC} from 'react';
+import Image from 'next/image';
 
 import {LinkBtn} from '@/utils/ui';
 
@@ -21,9 +22,11 @@ const ServiceSection: FC = () => {
 					</div>
 				</article>
 				<div className={styles.img}>
-					<img
+					<Image
 						src="/assets/image/sections/service/monument.svg"
 						alt="Изображение памятника"
+						width={194}
+						height={246}
 					/>
 				</div>
 			</div>
