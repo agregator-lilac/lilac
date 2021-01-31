@@ -24,12 +24,11 @@ const Home: NextPage<IInitialData> = ({ reviews }) => {
   )
 }
 
-export async function getServerSideProps() {
-  const dev = process.env.NODE_ENV !== 'production'
-  const HOST = dev ? process.env.HOST : process.env.HOST_PROD
-  const reviews = await fetch(`${HOST}/api/reviews`).then(async (data) => {
-    return await data.json()
-  })
+export async function getStaticProps() {
+	const reviews = await fetch('https://lilac.gb-game.ru/reviews').then(async (data) => {
+		return await data.json();
+	});
+
 
   return {
     props: {
