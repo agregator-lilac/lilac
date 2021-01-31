@@ -1,23 +1,33 @@
-const express = require('express');
-const next = require('next');
+const express = require('express')
+const next = require('next')
+const mongoose = require('mongoose')
 
-const port = parseInt(process.env.PORT, 10) || 3000;
-const dev = process.env.NODE_ENV !== 'production';
-const app = next({dev});
-const handle = app.getRequestHandler();
+const reviewsRouter = require('./routes/reviewsRouter.js')
 
+const dev = process.env.NODE_ENV !== 'production'
+const app = next({ dev })
+const handle = app.getRequestHandler()
+const port = process.env.PORT || 3000
+mongoose.connect(
+  'mongodb+srv://GBTest:1qaz1qaz@gbtest-denba.mongodb.net/test?retryWrites=true&w=majority',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+)
 
 app.prepare().then(() => {
-	const server = express();
+  const server = express()
+  server.use(express.json())
+  server.use(express.urlencoded({ extended: false }))
+  server.use('/api', reviewsRouter)
 
+  server.all('*', (req, res) => {
+    return handle(req, res)
+  })
 
-	server.all('*', (req, res) => {
-		return handle(req, res);
-	});
-
-	server.listen(process.env.PORT || 3000, (err) => {
-		console.log(process.env.PORT || 3000);
-		if (err) throw err;
-		console.log(`> Ready on http://localhost:${port}`);
-	});
-});
+  server.listen(port, (err) => {
+    if (err) throw err
+    console.log(`> Ready on http://localhost:${port}`)
+  })
+})
