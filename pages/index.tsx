@@ -5,18 +5,19 @@ import {ServiceSection} from '@/components/sections/ServiceSection';
 import {NextPage} from 'next';
 import {FaqSection} from '@/components/sections/FaqSection';
 import {AboutSection} from '@/components/sections/AboutSection';
+import { IReview } from '@/types/reviews.types';
 
 interface IInitialData {
-	// reviews: IReview[];
+	reviews: IReview[];
 }
 
-const Home: NextPage<IInitialData> = () => {
+const Home: NextPage<IInitialData> = ({reviews}) => {
 	return (
 		<>
 			<HeaderSection />
 			<CountersSection />
 			<ServiceSection />
-			<ReviewSection />
+			<ReviewSection data={reviews} />
 			<AboutSection />
 			<FaqSection />
 		</>
