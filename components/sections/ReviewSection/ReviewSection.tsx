@@ -11,18 +11,18 @@ interface IProps {
 	data?: IReview[];
 }
 
-const ReviewSection: FC<IProps> = () => {
-	const [reviews, setReviews] = useState<IReview[]>([]);
+const ReviewSection: FC<IProps> = ({data}) => {
+	const [reviews, setReviews] = useState<IReview[]>(data);
 
-	const {data} = useSWR<IReview[]>('/api/reviews', url => fetch(url).then(data => data.json()));
+	// const {data} = useSWR<IReview[]>('/api/reviews', url => fetch(url).then(data => data.json()));
 
-	if (!data) {
-		return <div>loading</div>;
-	}
+	// if (!data) {
+	// 	return <div>loading</div>;
+	// }
 	
-	if (data && reviews.length === 0) {
-		setReviews(data);
-	}
+	// if (data && reviews.length === 0) {
+	// 	setReviews(data);
+	// }
 
 	return (
 		<section className={`container ${styles.root}`}>
