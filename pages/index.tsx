@@ -3,39 +3,38 @@ import {HeaderSection} from '@/components/sections/HeaderSection';
 import {ReviewSection} from '@/components/sections/ReviewSection';
 import {ServiceSection} from '@/components/sections/ServiceSection';
 import {NextPage} from 'next';
-import {IReview} from '@/types/reviews.types';
 import {FaqSection} from '@/components/sections/FaqSection';
 import {AboutSection} from '@/components/sections/AboutSection';
 
 interface IInitialData {
-	reviews: IReview[];
+	// reviews: IReview[];
 }
 
-const Home: NextPage<IInitialData> = ({reviews}) => {
+const Home: NextPage<IInitialData> = () => {
 	return (
 		<>
 			<HeaderSection />
 			<CountersSection />
 			<ServiceSection />
-			<ReviewSection data={reviews} />
+			<ReviewSection />
 			<AboutSection />
 			<FaqSection />
 		</>
 	);
 };
 
-export async function getServerSideProps() {
-	let reviews = await fetch(`https://lilac-dev.herokuapp.com/api/reviews`)
-		.then(async (data) => {
-			return await data.json();
-		})
-		.catch((err) => console.log(err));
+// export async function getServerSideProps() {
+// 	let reviews = await fetch(`https://lilac-dev.herokuapp.com/api/reviews`)
+// 		.then(async (data) => {
+// 			return await data.json();
+// 		})
+// 		.catch((err) => console.log(err));
 
-	return {
-		props: {
-			reviews,
-		},
-	};
-}
+// 	return {
+// 		props: {
+// 			reviews,
+// 		},
+// 	};
+// }
 
 export default Home;
