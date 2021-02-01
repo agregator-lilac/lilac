@@ -23,18 +23,19 @@ const Home: NextPage<IInitialData> = () => {
 	);
 };
 
-// export async function getServerSideProps() {
-// 	let reviews = await fetch(`https://lilac-dev.herokuapp.com/api/reviews`)
-// 		.then(async (data) => {
-// 			return await data.json();
-// 		})
-// 		.catch((err) => console.log(err));
+export async function getServerSideProps() {
+	let reviews = await fetch(`https://lilac-dev.herokuapp.com/api/reviews`)
+		.then(async (data) => {
+			return await data.json();
+		})
+		.catch((err) => console.log(err));
 
-// 	return {
-// 		props: {
-// 			reviews,
-// 		},
-// 	};
-// }
+		console.log('data: ', reviews);
+	return {
+		props: {
+			reviews,
+		},
+	};
+}
 
 export default Home;
