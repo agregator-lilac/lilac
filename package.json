@@ -9,7 +9,7 @@
     "build": "next build",
     "start": "node server/index.js",
     "build:dev": "env-cmd -f ./environments/dev.env yarn dev",
-    "heroku-postbuild": "env-cmd -f ./environments/dev.env npm run build"
+    "heroku-postbuild": "env-cmd -f ./environments/dev.env npm run build && npm run start"
   },
   "keywords": [],
   "author": "",

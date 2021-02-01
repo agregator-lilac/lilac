@@ -9,12 +9,12 @@ const app = next({ dev })
 const handle = app.getRequestHandler()
 const port = process.env.PORT || 3000
 mongoose.connect(
-	'mongodb+srv://${USER_DB}:${process.env.PASS_DB}@${process.env.HOST_DB}/${process.env.NAME_DB}?retryWrites=true&w=majority',
-	{
-		useNewUrlParser: true,
-		useUnifiedTopology: true,
-	}
-);
+  'mongodb+srv://GBTest:1qaz1qaz@gbtest-denba.mongodb.net/test?retryWrites=true&w=majority',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+)
 
 app.prepare().then(() => {
   const server = express()
