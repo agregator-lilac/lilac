@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server server/index.js",
     "build": "next build",
-    "start": "node server/index.js"
+    "start": "node server/index.js",
+    "build:dev": "env-cmd -f ./environments/dev.env yarn dev",
+    "build:lilacDev": "env-cmd -f ./environments/dev.env npm run build && npm run start"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +17,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "connect-mongo": "^3.2.0",
+    "env-cmd": "^10.1.0",
     "express": "^4.17.1",
     "mongoose": "^5.11.14",
     "next": "^10.0.5",

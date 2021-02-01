@@ -25,7 +25,7 @@ const Home: NextPage<IInitialData> = ({reviews}) => {
 };
 
 export async function getStaticProps() {
-	let reviews = await fetch(`https://lilac-dev.herokuapp.com/api/reviews`)
+	let reviews = await fetch(`${process.env.HOST_API}reviews`)
 		.then(async (data) => {
 			return await data.json();
 		})
