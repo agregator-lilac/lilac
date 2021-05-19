@@ -1,7 +1,7 @@
-import {NextPage} from 'next';
+import { NextPage } from 'next'
 
 const ExecutorsPage = () => {
-    return <h1>Page</h1>
+  return <h1>Page</h1>
 }
 
-export default ExecutorsPage;
+export default ExecutorsPage

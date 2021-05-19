@@ -1,0 +1,33 @@
+.root {
+  margin: 15px;
+  background-color: #fff;
+  .img {
+    justify-content: center;
+    align-content: center;
+    width: 300px;
+  }
+  .iteminfo {
+    width: 300px;
+    height: 165px;
+    background: #272727;
+    border-radius: 0px;
+    .name {
+      color: #fff;
+      padding-left: 24px;
+    }
+    .section {
+      color: #9c9c9c;
+      padding: 26px 0 0 24px;
+    }
+    .btn {
+      display: block;
+      width: 200px;
+      text-align: center;
+      padding: 16px;
+      background-color: #fdb954;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin: 30px 0 0 24px;
+    }
+  }
+}
