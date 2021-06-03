@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { FaqSection } from './FaqSection';\nexport { FaqSection };","map":null,"metadata":{},"sourceType":"module"}

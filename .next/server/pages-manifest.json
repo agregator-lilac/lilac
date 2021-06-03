@@ -1,0 +1,16 @@
+{
+  "/_app": "pages/_app.js",
+  "/add": "pages/add.html",
+  "/api/auth/[...nextauth]": "pages/api/auth/[...nextauth].js",
+  "/catalog/[id]": "pages/catalog/[id].js",
+  "/catalog": "pages/catalog.js",
+  "/demo/nopreloader/[id]": "pages/demo/nopreloader/[id].js",
+  "/demo/preloader/[id]": "pages/demo/preloader/[id].js",
+  "/executors/[id]": "pages/executors/[id].html",
+  "/executors": "pages/executors.js",
+  "/": "pages/index.js",
+  "/order": "pages/order.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/404": "pages/404.html"
+}

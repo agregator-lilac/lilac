@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { Avatar } from './Avatar';\nexport { Avatar };","map":{"version":3,"sources":["C:/Users/User/Documents/job/lilac/components/Avatar/index.tsx"],"names":["Avatar"],"mappings":"AAAA,SAAQA,MAAR,QAAqB,UAArB;AAEA,SAAQA,MAAR","sourcesContent":["import {Avatar} from './Avatar';\r\n\r\nexport {Avatar};"]},"metadata":{},"sourceType":"module"}

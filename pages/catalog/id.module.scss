@@ -1,0 +1,26 @@
+.root {
+  background-color: #e5e5e5;
+  padding-right: 90px;
+  justify-content: space-between;
+}
+.left {
+  width: 670px;
+}
+.right {
+  width: 511px;
+}
+
+@media (max-width: 1199.8px) {
+  .left {
+    width: 600px;
+  }
+  .right {
+    width: 300px;
+  }
+}
+
+@media (max-width: 800.8px) {
+  .left {
+    width: 426px;
+  }
+}

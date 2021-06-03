@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { LinkBtn } from './linkBtn/linkBtn';\nexport { LinkBtn };","map":{"version":3,"sources":["C:/Users/User/Documents/job/lilac/utils/ui/index.ts"],"names":["LinkBtn"],"mappings":"AAAA,SAAQA,OAAR,QAAsB,mBAAtB;AAEA,SAAQA,OAAR","sourcesContent":["import {LinkBtn} from './linkBtn/linkBtn';\r\n\r\nexport {LinkBtn};\r\n"]},"metadata":{},"sourceType":"module"}

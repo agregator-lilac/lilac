@@ -15,7 +15,7 @@ interface IInitialData {
   }[]
 }
 
-const baseURL = 'http://localhost:3000'
+const baseURL = 'http://localhost:4000'
 
 const deleteAPI = async ({ url, data }) => {
   const response = await fetch(baseURL + url, {

@@ -1,0 +1,19 @@
+@import '/styles/variables.scss';
+.item {
+  display: flex;
+  align-items: center;
+  width: 33%;
+  min-width: min-content;
+  padding-right: 15px;
+  margin-bottom: 10px;
+}
+.item:last-child {
+  padding-right: 0;
+}
+
+.input {
+  margin-right: 7px;
+}
+.inactiv {
+  color: $color-inactiv;
+}

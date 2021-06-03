@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { jsx as _jsx } from \"react/jsx-runtime\";\n\nvar ExecutorsPage = function ExecutorsPage() {\n  return /*#__PURE__*/_jsx(\"h1\", {\n    children: \"Page\"\n  });\n};\n\nexport default ExecutorsPage;","map":null,"metadata":{},"sourceType":"module"}

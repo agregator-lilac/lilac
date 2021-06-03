@@ -1,131 +1,129 @@
 @import '@/styles/variables.scss';
 
 .nav {
-	background-color: $nav-background-color;
-	padding-top: 27px;
-	padding-bottom: 27px;
-	position: relative;
+  background-color: $nav-background-color;
+  padding: 27px 75px;
+  position: relative;
 
-	a {
-		color: #595959;
-		text-decoration: none;
-	}
+  a {
+    color: #595959;
+    text-decoration: none;
+  }
 
-	&__brand {
-		grid-column: span 2;
-	}
+  &__brand {
+    grid-column: span 2;
+  }
 
-	&__menu {
-		grid-column: span 4;
-		line-height: 18px;
-		align-items: center;
+  &__menu {
+    grid-column: span 4;
+    line-height: 18px;
+    align-items: center;
 
-		a {
-			font-size: 16px;
-			text-decoration: none;
-			margin-bottom: 8px;
-			position: relative;
+    a {
+      font-size: 16px;
+      text-decoration: none;
+      margin-bottom: 8px;
+      position: relative;
 
-			&:not(:first-child) {
-				margin-left: 38px;
-			}
+      &:not(:first-child) {
+        margin-left: 38px;
+      }
 
-			&.active::after {
-				height: 4px;
-				width: 60%;
-				content: "";
-				background: $primary-color;
-				display: block;
-				position: absolute;
-				top: 25px;
-			}
-		}
-	}
+      &.active::after {
+        height: 4px;
+        width: 60%;
+        content: '';
+        background: $primary-color;
+        display: block;
+        position: absolute;
+        top: 25px;
+      }
+    }
+  }
 
-	&__information {
-		grid-column: span 6;
-		align-items: center;
-		justify-content: flex-end;
+  &__information {
+    grid-column: span 6;
+    align-items: center;
+    justify-content: flex-end;
 
-		.telephone {
-			align-self: center;
-			margin-right: 48px;
+    .telephone {
+      align-self: center;
+      margin-right: 48px;
 
-			span {
-				color: #595959;
-				margin-left: 11px;
-			}
-		}
-	}
+      span {
+        color: #595959;
+        margin-left: 11px;
+      }
+    }
+  }
 
-	&__mobile {
-			grid-column: span 6;
-			display: none;
-		}
+  &__mobile {
+    grid-column: span 6;
+    display: none;
+  }
 
-	&__mobile-disabled {
-		display: none;
-	}
+  &__mobile-disabled {
+    display: none;
+  }
 
-	&__mobile-show {
-		position: absolute;
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-		left: 0;
-		top: 100px;
-		z-index: 999;
-		background: $nav-background-color;
-		text-align: center;
+  &__mobile-show {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    top: 100px;
+    z-index: 999;
+    background: $nav-background-color;
+    text-align: center;
 
-		a {	
-			font-size: 24px;
-			margin-bottom: 2rem;
-		}
+    a {
+      font-size: 24px;
+      margin-bottom: 2rem;
+    }
+  }
 
-	}
+  @media (max-width: 991px) {
+    &__brand {
+      grid-column: span 3;
+    }
 
-	@media (max-width: 991px) {
-		&__brand {
-			grid-column: span 3;
-		}
+    &__menu {
+      grid-column: span 7;
 
-		&__menu {
-			grid-column: span 7;
+      a {
+        &:not(:first-child) {
+          margin-left: 38px;
+        }
+      }
+    }
 
-			a {
-				&:not(:first-child) {
-					margin-left: 38px;
-				}
-			}
-		}
+    &__information {
+      grid-column: span 2;
 
-		&__information {
-			grid-column: span 2;
+      .telephone {
+        display: none;
+      }
+    }
+  }
 
-			.telephone {
-				display: none;
-			}
-		}
-	}
+  @media (max-width: 767.8px) {
+    justify-content: space-between;
+    &__brand {
+      grid-column: span 6;
+    }
 
-	@media (max-width: 767.8px) {
-		justify-content: space-between;
-		&__brand {
-			grid-column: span 6;
-		}
+    & &__menu {
+      display: none;
+    }
 
-		& &__menu {
-			display: none;
-		}
+    & &__information {
+      display: none;
+    }
 
-		& &__information {
-			display: none;
-		}
-
-		.nav__mobile {
-			display: flex;
-			justify-content: flex-end;
-		}
-	}
+    .nav__mobile {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
 }

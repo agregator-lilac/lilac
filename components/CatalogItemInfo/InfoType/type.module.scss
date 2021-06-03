@@ -1,0 +1,28 @@
+@import '/styles/variables.scss';
+.root {
+}
+
+.h4 {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  padding-bottom: 25px;
+}
+
+.item {
+  width: 33%;
+}
+.itemOther {
+  display: flex;
+  align-items: center;
+  margin: 10px 0 30px;
+}
+.input {
+  margin-right: 7px;
+}
+.inputOther {
+  width: 100%;
+  height: 42px;
+  border-radius: 5px;
+  padding-left: 7px;
+}

@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { Avatar } from './Avatar';\nexport { Avatar };","map":null,"metadata":{},"sourceType":"module"}

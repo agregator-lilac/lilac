@@ -1,6 +1,5 @@
-import { IPageProps } from '@/types/app'
-import type { AppContext, AppProps } from 'next/app'
-import App from 'next/app'
+import type { AppProps } from 'next/app'
+import { Provider } from 'next-auth/client'
 
 import { Navbar } from '@/components/Navbar'
 
@@ -9,11 +8,13 @@ import { Footer } from '@/components/Footer'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
-    <>
-      <Navbar />
-      <Component {...pageProps} />
-      <Footer />
-    </>
+    <Provider session={pageProps.session}>
+      <div className="container">
+        <Navbar />
+        <Component {...pageProps} />
+        <Footer />
+      </div>
+    </Provider>
   )
 }
 

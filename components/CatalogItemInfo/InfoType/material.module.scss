@@ -1,0 +1,35 @@
+.h4 {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  padding-bottom: 25px;
+}
+.inputimg {
+  width: 80px;
+  height: 80px;
+  border: 2px solid #c4c4c4;
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin-bottom: 7px;
+  cursor: pointer;
+}
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+.itemname {
+  display: flex;
+  padding-right: 12px;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+}
+.itemname:last-child {
+  padding-right: 0;
+}
+.isactive {
+  border-color: #141414;
+}

@@ -17,7 +17,7 @@ const HeaderSection: FC = () => {
             цена&nbsp;-&nbsp;качество&nbsp;-&nbsp;сроки
           </p>
           <div className={styles.btn}>
-            <LinkBtn href="/catalogAPI" label="Выбрать" />
+            <LinkBtn href="/catalog" label="Выбрать" />
           </div>
         </div>
       </div>

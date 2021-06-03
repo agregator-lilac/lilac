@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { Footer } from './Footer';\nexport { Footer };","map":{"version":3,"sources":["C:/Users/User/Documents/job/lilac/components/Footer/index.ts"],"names":["Footer"],"mappings":"AAAA,SAAQA,MAAR,QAAqB,UAArB;AAEA,SAAQA,MAAR","sourcesContent":["import {Footer} from './Footer';\r\n\r\nexport {Footer};\r\n"]},"metadata":{},"sourceType":"module"}

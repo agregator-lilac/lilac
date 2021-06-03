@@ -1,0 +1,19 @@
+.select {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  label {
+    margin-bottom: 20px;
+  }
+  select {
+    width: 114px;
+    height: 48px;
+  }
+}
+@media (max-width: 1199.8px) {
+  .select {
+    select {
+      width: 100px;
+    }
+  }
+}

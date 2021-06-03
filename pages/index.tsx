@@ -1,8 +1,10 @@
+import { NextPage } from 'next'
+import React from 'react'
+
 import { CountersSection } from '@/components/sections/CountersSection/CountersSection'
 import { HeaderSection } from '@/components/sections/HeaderSection'
 import { ReviewSection } from '@/components/sections/ReviewSection'
 import { ServiceSection } from '@/components/sections/ServiceSection'
-import { NextPage } from 'next'
 import { FaqSection } from '@/components/sections/FaqSection'
 import { AboutSection } from '@/components/sections/AboutSection'
 import { IReview } from '@/types/reviews.types'
